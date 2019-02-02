@@ -1,0 +1,31 @@
+import math
+import time
+#import RPi.GPIO as GPIO
+
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+def anemCirc(diameter):
+    circumference=math.pi*diameter
+    return circumference
+def anemRPM():
+    inputState = False    #GPIO.input(5)
+    count = 0
+    tEnd = time.time()+60
+    while time.time()<=(tEnd):
+        if inputState==False:
+            count+=1
+            print("run")
+        else:
+            continue
+    return count
+    print(count)
+def anemSpeed():
+    anemCirc(10)
+    anemRPM()
+    RPM = (count*60)*(circumference/63360)
+    anemSpeed()
+
+
+
+anemSpeed()
